@@ -23,5 +23,7 @@ urlpatterns = [
     # path('',include('IRCTC_App.urls')),
     path('',views.SignUpPage,name='signup'),
     path('login/', views.LoginPage,name='login'),
-    path('home/', views.HomePage,name='home'),
+    path('home/', views.HomePage, name='home'),
+        path('logout/', views.logout_view, name='logout'),  # Logout URL
+    path('book_train/', views.book_train, name='book_train'),  # Book a Train URL
 ]

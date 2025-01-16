@@ -1,0 +1,32 @@
+<!-- book_train.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <title>Book a Train</title>
+  </head>
+  <body>
+    <h1>Book a Train</h1>
+    <!-- Train Booking Form (example) -->
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="train">Select Train:</label>
+        <select class="form-control" id="train" name="train">
+          <option value="train1">Train 1</option>
+          <option value="train2">Train 2</option>
+          <option value="train3">Train 3</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Book Train</button>
+    </form>
+    
+    <a href="{% url 'home' %}" class="btn btn-secondary mt-3">Back to Home</a>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

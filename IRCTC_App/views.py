@@ -1,10 +1,8 @@
-from django.shortcuts import render, HttpResponse
-from django.contrib.auth.hashers import make_password
+from django.shortcuts import render, HttpResponse, redirect
+from django.contrib.auth.hashers import make_password,check_password
+from django.contrib.auth import logout
 from .models import User
 
-# Create your views here.
-# def index(request):
-#    return HttpResponse("Home Page")
 
 def SignUpPage(request):
     if request.method == 'POST':
@@ -27,17 +25,27 @@ def SignUpPage(request):
             hashed_password = make_password(pass1)
             new_user = User(username=user_name, email=email, password=hashed_password)
             new_user.save()
-            return render(request, 'signup.html', {'message': 'User registered successfully'})
+            return redirect('login') 
         except Exception as e:
             return render(request, 'signup.html', {'error': f'Error saving user: {str(e)}'})
 
     else:
         return render(request, 'signup.html')
      
+
 def LoginPage(request):
-   return render(request,'login.html')
+    return render(request, 'login.html')
 
 def HomePage(request):
    return render(request,'home.html')
+
+# Logout view
+def logout_view(request):
+    logout(request)  # Logs out the user
+    return redirect('signup')  # Redirects to the home page after logging out
+
+# Book Train view
+def book_train(request):
+    return render(request, 'book_train.html')
 
 

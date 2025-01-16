@@ -8,7 +8,12 @@
   </head>
   <body>
     <h1>Home Page</h1>
-    {% comment %} <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a> {% endcomment %}
+    
+    <!-- Logout Button -->
+    <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+    
+    <!-- Book a Train Button -->
+    <a href="{% url 'book_train' %}" class="btn btn-success">Book a Train</a>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
