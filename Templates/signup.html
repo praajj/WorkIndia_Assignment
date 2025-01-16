@@ -97,6 +97,8 @@
     <div class="signup-container">
         <h3>Sign Up Here</h3>
         <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Enter Username" required>
 
