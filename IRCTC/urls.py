@@ -16,8 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from IRCTC_App import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('IRCTC_App.urls')),
+    # path('',include('IRCTC_App.urls')),
+    path('',views.SignUpPage,name='signup'),
+    path('login/', views.LoginPage,name='login'),
+    path('home/', views.HomePage,name='home'),
 ]
